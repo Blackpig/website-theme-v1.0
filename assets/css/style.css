@@ -63,6 +63,8 @@ img.spotlight{
 	text-transform: uppercase;
 	font-size: 0.8rem;
 	letter-spacing: 4px;
+	display: inline-block;
+	margin-top: 1.6rem;
 }
 
 .ghost:hover {
@@ -88,6 +90,7 @@ img.spotlight{
 .top-bar-section ul li > a.button {
 	background: transparent;
 	border: none;
+	border-radius: 3px;
 	font-family: 'heroic';
 	font-size: 1.1rem;
 	letter-spacing: 2px;
@@ -137,7 +140,7 @@ img.spotlight{
 
 #intro .logo{
 	background:transparent url(../images/logo-white.png) no-repeat center center;
-	margin: 0 auto;
+	margin: 125px auto 0;
  	height: 78px;
 }
 
