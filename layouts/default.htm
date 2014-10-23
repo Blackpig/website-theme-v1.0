@@ -1,0 +1,66 @@
+description = "Default page layout for site"
+==
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blackpig - {{ this.page.title }}</title>
+  <meta name="author" content="Blackpig">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.ico" />
+  {% styles %}
+  <link href="{{ 'assets/css/normalize.css'|theme }}" rel="stylesheet">
+  <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
+  <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
+</head>
+<body>
+  <img src="{{ 'assets/images/bg-spotlight.png'|theme }}" class="spotlight" alt="">
+  <div id="top-bar">
+    <nav>
+      &nbsp;
+    </nav>
+  </div>
+
+  <header>
+    <div class="row">
+      <div class="small-12 small-centered columns">
+        <div id="logo"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <nav id="main-nav" class="small-12 small-centered columns">
+        <ul>
+          <li><a href="about">ABOUT</a></li>
+          <li><a href="works">WORKS</a></li>              
+          <li><a href="articles">ARTICLES</a></li>
+          <li><a href="contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Content -->
+<div id="content" class="row">
+  {% page %}     
+</div>
+
+<!-- Footer -->
+<footer>
+  {% partial "footer" %}
+</footer>
+<!-- Scripts -->
+<script src="{{ [
+'assets/javascript/jquery.js', 
+'assets/javascript/foundation/foundation.min.js'
+]|theme }}">
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(document).foundation();
+  })
+</script>
+{% framework extras %}
+{% scripts %}
+</body>
+</html>

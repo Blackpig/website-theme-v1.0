@@ -1,0 +1,45 @@
+description = "Default page layout for site"
+==
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blackpig - {{ this.page.title }}</title>
+  <meta name="author" content="Blackpig">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.ico" />
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  {% styles %}
+  <link href="{{ 'assets/css/normalize.css'|theme }}" rel="stylesheet">
+  <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
+  <link href="{{ 'assets/css/foundation-icons.css'|theme }}" rel="stylesheet">
+  <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
+</head>
+<body class="home">
+  <img src="{{ 'assets/images/bg-spotlight.png'|theme }}" class="spotlight" alt="">
+    
+  {% partial 'top-bar.htm' %}
+
+<!-- Content -->
+<div id="content">
+  {% page %}     
+</div>
+
+<!-- Footer -->
+<footer>
+  {% partial "footer" %}
+</footer>
+<!-- Scripts -->
+<script src="{{ [
+'assets/javascript/jquery.js', 
+'assets/javascript/foundation/foundation.min.js'
+]|theme }}">
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(document).foundation();
+  })
+</script>
+{% framework extras %}
+{% scripts %}
+</body>
+</html>

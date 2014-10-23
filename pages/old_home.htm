@@ -1,0 +1,38 @@
+title = "Beautifully Crafted Websites"
+url = "/old_home"
+layout = "home"
+description = "Home Page"
+hidden = "1"
+meta_title = "Beautifully crafted websites"
+
+[blogPosts]
+pageParam = ":page"
+postsPerPage = "5"
+noPostsMessage = "No posts found"
+categoryPage = "home"
+postPage = "home"
+==
+<article class="small-8 columns">
+		<h1>Welcome</h1>
+		<p><img src="{{ 'assets/images/stuart_hallewell.jpg'|theme }}" class="breathe-right left">
+		This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. This is me the hunky gorgeous fella. 
+		</p>
+		<p><strong class="white">Stuart Hallewell</strong></p>
+	</article>
+
+	<aside class="small-4 columns">
+		<section>
+			<h1>Articles</h1>
+			<ul class="post-list">
+    			{% for post in posts %}
+        		<li>
+            		<time datetime="{{ post.published_at|date('M d, Y') }}">{{ post.published_at|date('d M') }}</time>
+            		<h4><a href="{{ categoryPage|page({ (categoryPageIdParam): post.categories.0.slug}) }}">{{ post.categories.0.name }}:</a><a href="{{ postPage|page({ (postPageIdParam): post.slug}) }}">{{ post.title }}</a></h4>
+                	<p class="excerpt">{{ post.excerpt }}</p>
+        		</li>
+    		{% else %}
+        		<li class="no-data">{{ noPostsMessage }}</li>
+    			{% endfor %}
+			</ul>
+		</section>
+	</aside>
